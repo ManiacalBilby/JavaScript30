@@ -16,8 +16,6 @@
       secondHand.style.transform = `rotate(${secondsDegrees}deg)`
       minuteHand.style.transform = `rotate(${minutesDegrees}deg)`
       hourHand.style.transform = `rotate(${hoursDegrees}deg)`
-      
-      console.log(seconds)
     }
 
     setInterval(setDate, 1000)
