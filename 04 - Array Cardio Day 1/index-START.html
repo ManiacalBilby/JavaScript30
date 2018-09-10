@@ -91,6 +91,23 @@
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+    // const singleInstanceData = data.filter(function(item, pos, self) {
+    // return self.indexOf(item) == pos;
+    // })
+    // console.log(singleInstanceData)
+
+    const summaryOfData= data.reduce(function (allData, item) { 
+      if (item in allData) {
+        allData[item]++;
+      }
+      else {
+        allData[item] = 1;
+      }
+      return allData;
+      }, {});
+
+    console.log(summaryOfData)
+
   </script>
 </body>
 </html>
