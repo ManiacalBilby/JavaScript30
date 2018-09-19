@@ -38,11 +38,16 @@
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
     const result = comments.filter(comment => comment.id === 823423)
-    console.log(result)
+    console.log("Comment with ID 823423", result)
 
     // Array.prototype.findIndex()
     // Find the comment with this ID
+    const index = comments.findIndex(comment => comment.id === 823423)
+    console.log("Index of comment with ID 823423", index)
     // delete the comment with the ID of 823423
+    comments.splice(1, 1)
+    console.log("Array with index 1 removed", comments)
+
 
   </script>
 </body>
