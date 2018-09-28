@@ -16,6 +16,7 @@
   ctx.lineJoin = 'round';
   ctx.lineCap = 'round';
   ctx.lineWidth = 15;
+  ctx.globalCompositeOperation = 'darken'
 
   let isDrawing = false;
   let lastX = 0;
@@ -36,7 +37,7 @@
     lastX = event.offsetX;
     lastY = event.offsetY;
     hue++;
-    
+
     if(ctx.lineWidth >= 30 || ctx.lineWidth <= 1){
       direction = !direction
     }
