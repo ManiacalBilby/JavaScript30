@@ -98,7 +98,35 @@
     </div>
   </div>
 
-<script>
-</script>
+  <script>
+    //When a box is checked this should be seen. 
+    //When shift is held down and a second box is checked 
+    //all boxes in between should also be checked.
+
+
+  const allBoxes = document.querySelectorAll('input[type=checkbox]');
+
+  let lastChecked;
+
+  function boxChecked(event) {
+
+    let inBetween = false;
+    
+    if (event.shiftKey && this.checked) {
+      allBoxes.forEach(box => {
+        if (box === this || box === lastChecked) {
+          inBetween = !inBetween
+        }
+        if(inBetween) {
+          box.checked = true
+        }
+      });
+    }
+    lastChecked = this;
+  }
+
+  allBoxes.forEach(box => box.addEventListener('click', boxChecked));
+
+  </script>
 </body>
 </html>
