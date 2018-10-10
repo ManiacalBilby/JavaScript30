@@ -10,6 +10,7 @@ const ranges = player.querySelectorAll('.player_slider')
 /* Build out functions */
 
 function togglePlay() {
+  updateButton()
   if (video.paused) {
     video.play();
   }
@@ -18,7 +19,15 @@ function togglePlay() {
   }
 }
 
+function updateButton() {
+  const icon = !video.paused ? '►' : '❚ ❚'
+  toggle.textContent = icon;
+}
+
 /* Hook up the event listeners */
 
 video.addEventListener('click', togglePlay)
+// video.addEventListener('play', updateButton)
+// video.addEventListener('pause', updateButton)
+
 toggle.addEventListener('click', togglePlay)
