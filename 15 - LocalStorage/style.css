@@ -70,6 +70,9 @@
     .add-items {
       margin-top: 20px;
     }
+    .delete-items {
+      margin-top: 20px;
+    }
 
     .add-items input {
       padding:10px;
