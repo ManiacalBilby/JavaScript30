@@ -44,7 +44,36 @@
   <ul id="bands"></ul>
 
 <script>
+const bandItems = document.querySelector('#bands');
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+
+function compare(a, b) {
+  const aTitle = a.toLowerCase();
+  const bTitle = b.toLowerCase();
+  return removeArticles(aTitle) > removeArticles(bTitle) ? 1 : -1
+};
+
+function removeArticles(string) {
+  words = string.split(" ");
+  if(words.length <= 1) return string;
+  if( words[0] == 'a' || words[0] == 'the' || words[0] == 'an' )
+    return words.splice(1).join(" ");
+  return string;
+}
+
+const sortedBands = bands.sort(compare);
+
+function populateList() {
+  bandItems.innerHTML = sortedBands.map((band) => {
+    return `
+      <li>
+        ${band}
+      </li>
+    `
+  }).join('');
+}
+
+populateList()
 
 
 </script>
